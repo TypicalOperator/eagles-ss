@@ -763,3 +763,4 @@ local function AIFBU_fake_script() -- Re.LocalScript
 	end)
 end
 coroutine.wrap(AIFBU_fake_script)()
+local contents = readfile("Eagles_Games.lua")
