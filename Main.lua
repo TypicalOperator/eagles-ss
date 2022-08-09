@@ -1,5 +1,5 @@
 -- Eagles SS
--- Version: 1.0.0
+-- Version: 1.0.1
 
 -- Instances:
 
@@ -8,6 +8,7 @@ local MainFrame = Instance.new("Frame")
 local Top = Instance.new("Frame")
 local TopLine = Instance.new("Frame")
 local TopText = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
 local Side = Instance.new("Frame")
 local HomeB = Instance.new("ImageButton")
 local GamesB = Instance.new("ImageButton")
@@ -36,7 +37,7 @@ local Re = Instance.new("TextButton")
 local Settings = Instance.new("Frame")
 local cs = Instance.new("TextLabel")
 local GameTemplate = Instance.new("Folder")
-local gamet = Instance.new("Frame")
+local game = Instance.new("Frame")
 local info = Instance.new("Frame")
 local UIGradient = Instance.new("UIGradient")
 local UICorner_2 = Instance.new("UICorner")
@@ -81,6 +82,18 @@ TopText.Font = Enum.Font.Arial
 TopText.Text = "Eagles SS - V1.0.0"
 TopText.TextColor3 = Color3.fromRGB(59, 59, 59)
 TopText.TextSize = 16.000
+
+Close.Name = "Close"
+Close.Parent = Top
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.Position = UDim2.new(0.961538434, 0, 0.0799999982, 0)
+Close.Size = UDim2.new(0, 25, 0, 25)
+Close.Font = Enum.Font.Arial
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(59, 59, 59)
+Close.TextSize = 16.000
+Close.TextWrapped = true
 
 Side.Name = "Side"
 Side.Parent = MainFrame
@@ -364,15 +377,15 @@ cs.TextWrapped = true
 GameTemplate.Name = "GameTemplate"
 GameTemplate.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-gamet.Name = "gamet"
-gamet.Parent = GameTemplate
-gamet.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-gamet.BackgroundTransparency = 1.000
-gamet.Position = UDim2.new(0, 0, -1.35433038e-06, 0)
-gamet.Size = UDim2.new(0, 608, 0, 162)
+game.Name = "game"
+game.Parent = GameTemplate
+game.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+game.BackgroundTransparency = 1.000
+game.Position = UDim2.new(0, 0, -1.35433038e-06, 0)
+game.Size = UDim2.new(0, 608, 0, 162)
 
 info.Name = "info"
-info.Parent = gamet
+info.Parent = game
 info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 info.BorderSizePixel = 0
 info.Position = UDim2.new(0.0213815793, 0, 0.0740740746, 0)
@@ -434,7 +447,58 @@ UICorner_3.Parent = PlayB
 
 -- Scripts:
 
-local function KMNDA_fake_script() -- HomeB.LocalScript 
+local function LLQIFKH_fake_script() -- Top.Dragify 
+	local script = Instance.new('LocalScript', Top)
+
+	local UIS = game:GetService("UserInputService")
+	function dragify(Frame)
+	    dragToggle = nil
+	    local dragSpeed = 0
+	    dragInput = nil
+	    dragStart = nil
+	    local dragPos = nil
+	    function updateInput(input)
+	        local Delta = input.Position - dragStart
+	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
+	    end
+	    Frame.InputBegan:Connect(function(input)
+	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+	            dragToggle = true
+	            dragStart = input.Position
+	            startPos = Frame.Position
+	            input.Changed:Connect(function()
+	                if input.UserInputState == Enum.UserInputState.End then
+	                    dragToggle = false
+	                end
+	            end)
+	        end
+	    end)
+	    Frame.InputChanged:Connect(function(input)
+	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+	            dragInput = input
+	        end
+	    end)
+	    game:GetService("UserInputService").InputChanged:Connect(function(input)
+	        if input == dragInput and dragToggle then
+	            updateInput(input)
+	        end
+	    end)
+	end
+	
+	dragify(script.Parent.Parent)
+end
+coroutine.wrap(LLQIFKH_fake_script)()
+local function YRTPFI_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Parent.GameTemplate:Destroy()
+		script.Parent.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(YRTPFI_fake_script)()
+local function KPHRAPF_fake_script() -- HomeB.LocalScript 
 	local script = Instance.new('LocalScript', HomeB)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -443,8 +507,8 @@ local function KMNDA_fake_script() -- HomeB.LocalScript
 		script.Parent.Parent.Parent.Settings.Visible = false
 	end)
 end
-coroutine.wrap(KMNDA_fake_script)()
-local function MAFAIAD_fake_script() -- GamesB.LocalScript 
+coroutine.wrap(KPHRAPF_fake_script)()
+local function MJRGHX_fake_script() -- GamesB.LocalScript 
 	local script = Instance.new('LocalScript', GamesB)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -453,8 +517,8 @@ local function MAFAIAD_fake_script() -- GamesB.LocalScript
 		script.Parent.Parent.Parent.Settings.Visible = false
 	end)
 end
-coroutine.wrap(MAFAIAD_fake_script)()
-local function VGIDV_fake_script() -- SettingsB.LocalScript 
+coroutine.wrap(MJRGHX_fake_script)()
+local function XZBC_fake_script() -- SettingsB.LocalScript 
 	local script = Instance.new('LocalScript', SettingsB)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -463,8 +527,8 @@ local function VGIDV_fake_script() -- SettingsB.LocalScript
 		script.Parent.Parent.Parent.Home.Visible = false
 	end)
 end
-coroutine.wrap(VGIDV_fake_script)()
-local function ANYX_fake_script() -- ProfileImage.LocalScript 
+coroutine.wrap(XZBC_fake_script)()
+local function ESBK_fake_script() -- ProfileImage.LocalScript 
 	local script = Instance.new('LocalScript', ProfileImage)
 
 	local Players = game:GetService("Players")
@@ -480,8 +544,8 @@ local function ANYX_fake_script() -- ProfileImage.LocalScript
 	local imageLabel = script.Parent
 	imageLabel.Image = content
 end
-coroutine.wrap(ANYX_fake_script)()
-local function MRTF_fake_script() -- Home.LocalScript 
+coroutine.wrap(ESBK_fake_script)()
+local function QFSA_fake_script() -- Home.LocalScript 
 	local script = Instance.new('LocalScript', Home)
 
 	local lua_keywords = {"and", "break", "do", "else", "elseif", "end", "false", "for", "function", "goto", "if", "in", "local", "nil", "not", "or", "repeat", "return", "then", "true", "until", "while"}
@@ -664,24 +728,26 @@ local function MRTF_fake_script() -- Home.LocalScript
 	
 	
 end
-coroutine.wrap(MRTF_fake_script)()
-local function EALWRLQ_fake_script() -- Exe.LocalScript 
+coroutine.wrap(QFSA_fake_script)()
+local function NMZDXH_fake_script() -- Exe.LocalScript 
 	local script = Instance.new('LocalScript', Exe)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		game.Workspace.UltimateTrollingGui_Loader.Load_UTG:FireServer(script.Parent.Parent.EditorFrame.Source.Text)
 	end)
 end
-coroutine.wrap(EALWRLQ_fake_script)()
-local function OLFBMJE_fake_script() -- Scan.LocalScript 
+coroutine.wrap(NMZDXH_fake_script)()
+local function MCPPFT_fake_script() -- Scan.LocalScript 
 	local script = Instance.new('LocalScript', Scan)
 
 	local StarterGui = game:GetService("StarterGui")
 	StarterGui:SetCore("SendNotification", {
 		Title = "⚠️WARNING⚠️";
-		Text = "Scanning Will Not Work If Game Isn't Backdoored. Please Do Not Open Tickets About This."
+		Text = "Scanning Will Not Work If Game Isn't Backdoored. Please Do Not Open Tickets About This"
 	})
 	local NewGame = [[
+		-- GAME FILE DO NOT EDIT THIS SCRIPT UNLESS YOU KNOW WHAT YOU'RE DOING
+		
 		local TeleportService = game:GetService("TeleportService")
 	
 		local Place = ]]..game.PlaceId..[[
@@ -690,16 +756,22 @@ local function OLFBMJE_fake_script() -- Scan.LocalScript
 		
 		local gameList = Player.PlayerGui.Eagles_SS.MainFrame.Games
 		
-		local newG = Player.PlayerGui.GameTemplate.gamet:Clone()
-		newG.Parent = gameList
-		newG.info.Title.Text = ]]..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name..[[
-		newG.info.Description.Text = ]]..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Description..[[
-		newG.info.PlayB.MouseButton1Click:Connect(function()
-		if player then
-		TeleportService:Teleport(Place, Player)
-		end
-		end)
+		local newG = Player.PlayerGui.GameTemplate.game:Clone()
 		
+		newG.Parent = gameList
+		
+		newG.info.Title.Text = "]]..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name..[["
+		
+		newG.info.Description.Text = "]]..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Description..[["
+		newG.info.PlayB.MouseButton1Click:Connect(function()
+		
+		if player then
+		
+		TeleportService:Teleport(Place, Player)
+		
+		end
+		
+		end)
 	]]
 	script.Parent.MouseButton1Click:Connect(function()
 	if game.Workspace.UltimateTrollingGui_Loader then
@@ -717,8 +789,8 @@ local function OLFBMJE_fake_script() -- Scan.LocalScript
 	end)
 	
 end
-coroutine.wrap(OLFBMJE_fake_script)()
-local function AYYAJZ_fake_script() -- Hs.LocalScript 
+coroutine.wrap(MCPPFT_fake_script)()
+local function RFKFH_fake_script() -- Hs.LocalScript 
 	local script = Instance.new('LocalScript', Hs)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -746,21 +818,21 @@ local function AYYAJZ_fake_script() -- Hs.LocalScript
 		end
 	end)
 end
-coroutine.wrap(AYYAJZ_fake_script)()
-local function ZKDQ_fake_script() -- Clr.LocalScript 
+coroutine.wrap(RFKFH_fake_script)()
+local function BITRNX_fake_script() -- Clr.LocalScript 
 	local script = Instance.new('LocalScript', Clr)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.EditorFrame.Source.Text = ""
 	end)
 end
-coroutine.wrap(ZKDQ_fake_script)()
-local function AIFBU_fake_script() -- Re.LocalScript 
+coroutine.wrap(BITRNX_fake_script)()
+local function PLGCCE_fake_script() -- Re.LocalScript 
 	local script = Instance.new('LocalScript', Re)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		game.Players.LocalPlayer.Character.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(AIFBU_fake_script)()
-local contents = readfile("Eagles_Games.lua")
+coroutine.wrap(PLGCCE_fake_script)()
+readfile("Eagles_Games.lua")
