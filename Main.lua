@@ -123,6 +123,7 @@ UICorner_2.Parent = PlayB
 Eagles_SS.Name = "Eagles_SS"
 Eagles_SS.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 Eagles_SS.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Eagles_SS.ResetOnSpawn = false
 
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = Eagles_SS
