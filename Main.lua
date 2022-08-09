@@ -3,6 +3,16 @@
 
 -- Instances:
 
+local GameTemplate = Instance.new("Folder")
+local gamet = Instance.new("Frame")
+local info = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+local UICorner = Instance.new("UICorner")
+local ImageLabel = Instance.new("ImageLabel")
+local Title = Instance.new("TextLabel")
+local Description = Instance.new("TextLabel")
+local PlayB = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
 local Eagles_SS = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local Top = Instance.new("Frame")
@@ -14,7 +24,7 @@ local HomeB = Instance.new("ImageButton")
 local GamesB = Instance.new("ImageButton")
 local SettingsB = Instance.new("ImageButton")
 local ProfileImage = Instance.new("ImageLabel")
-local UICorner = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
 local Games = Instance.new("Frame")
 local GameList = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
@@ -36,18 +46,79 @@ local Clr = Instance.new("TextButton")
 local Re = Instance.new("TextButton")
 local Settings = Instance.new("Frame")
 local cs = Instance.new("TextLabel")
-local GameTemplate = Instance.new("Folder")
-local gamet = Instance.new("Frame")
-local info = Instance.new("Frame")
-local UIGradient = Instance.new("UIGradient")
-local UICorner_2 = Instance.new("UICorner")
-local ImageLabel = Instance.new("ImageLabel")
-local Title = Instance.new("TextLabel")
-local Description = Instance.new("TextLabel")
-local PlayB = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
 
 --Properties:
+
+GameTemplate.Name = "GameTemplate"
+GameTemplate.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+gamet.Name = "gamet"
+gamet.Parent = GameTemplate
+gamet.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+gamet.BackgroundTransparency = 1.000
+gamet.Position = UDim2.new(0, 0, -1.35433038e-06, 0)
+gamet.Size = UDim2.new(0, 608, 0, 162)
+
+info.Name = "info"
+info.Parent = gamet
+info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+info.BorderSizePixel = 0
+info.Position = UDim2.new(0.0213815793, 0, 0.0740740746, 0)
+info.Size = UDim2.new(0, 576, 0, 125)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(28, 28, 28)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient.Rotation = 270
+UIGradient.Parent = info
+
+UICorner.Parent = info
+
+ImageLabel.Parent = info
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Size = UDim2.new(0, 125, 0, 125)
+ImageLabel.Image = "rbxassetid://1557343445"
+
+Title.Name = "Title"
+Title.Parent = info
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.217013896, 0, -0.00800000038, 0)
+Title.Size = UDim2.new(0, 451, 0, 50)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Game Name"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+Description.Name = "Description"
+Description.Parent = info
+Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Description.BackgroundTransparency = 1.000
+Description.Position = UDim2.new(0.217013896, 0, 0.39199999, 0)
+Description.Size = UDim2.new(0, 451, 0, 44)
+Description.Font = Enum.Font.SourceSans
+Description.Text = "Game Description"
+Description.TextColor3 = Color3.fromRGB(255, 255, 255)
+Description.TextSize = 19.000
+Description.TextWrapped = true
+Description.TextXAlignment = Enum.TextXAlignment.Left
+Description.TextYAlignment = Enum.TextYAlignment.Top
+
+PlayB.Name = "PlayB"
+PlayB.Parent = info
+PlayB.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+PlayB.Position = UDim2.new(0.217013896, 0, 0.79566747, 0)
+PlayB.Size = UDim2.new(0, 451, 0, 24)
+PlayB.Font = Enum.Font.SourceSans
+PlayB.Text = "Play"
+PlayB.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayB.TextScaled = true
+PlayB.TextSize = 14.000
+PlayB.TextWrapped = true
+
+UICorner_2.Parent = PlayB
 
 Eagles_SS.Name = "Eagles_SS"
 Eagles_SS.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -135,7 +206,7 @@ ProfileImage.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
 ProfileImage.Position = UDim2.new(0.190476194, 0, 0.902366936, 0)
 ProfileImage.Size = UDim2.new(0, 25, 0, 25)
 
-UICorner.Parent = ProfileImage
+UICorner_3.Parent = ProfileImage
 
 Games.Name = "Games"
 Games.Parent = MainFrame
@@ -374,80 +445,9 @@ cs.TextScaled = true
 cs.TextSize = 14.000
 cs.TextWrapped = true
 
-GameTemplate.Name = "GameTemplate"
-GameTemplate.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
-gamet.Name = "gamet"
-gamet.Parent = GameTemplate
-gamet.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-gamet.BackgroundTransparency = 1.000
-gamet.Position = UDim2.new(0, 0, -1.35433038e-06, 0)
-gamet.Size = UDim2.new(0, 608, 0, 162)
-
-info.Name = "info"
-info.Parent = gamet
-info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-info.BorderSizePixel = 0
-info.Position = UDim2.new(0.0213815793, 0, 0.0740740746, 0)
-info.Size = UDim2.new(0, 576, 0, 125)
-
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(28, 28, 28)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient.Rotation = 270
-UIGradient.Parent = info
-
-UICorner_2.Parent = info
-
-ImageLabel.Parent = info
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.BackgroundTransparency = 1.000
-ImageLabel.Size = UDim2.new(0, 125, 0, 125)
-ImageLabel.Image = "rbxassetid://1557343445"
-
-Title.Name = "Title"
-Title.Parent = info
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1.000
-Title.Position = UDim2.new(0.217013896, 0, -0.00800000038, 0)
-Title.Size = UDim2.new(0, 451, 0, 50)
-Title.Font = Enum.Font.SourceSans
-Title.Text = "Game Name"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextScaled = true
-Title.TextSize = 14.000
-Title.TextWrapped = true
-Title.TextXAlignment = Enum.TextXAlignment.Left
-
-Description.Name = "Description"
-Description.Parent = info
-Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Description.BackgroundTransparency = 1.000
-Description.Position = UDim2.new(0.217013896, 0, 0.39199999, 0)
-Description.Size = UDim2.new(0, 451, 0, 44)
-Description.Font = Enum.Font.SourceSans
-Description.Text = "Game Description"
-Description.TextColor3 = Color3.fromRGB(255, 255, 255)
-Description.TextSize = 19.000
-Description.TextWrapped = true
-Description.TextXAlignment = Enum.TextXAlignment.Left
-Description.TextYAlignment = Enum.TextYAlignment.Top
-
-PlayB.Name = "PlayB"
-PlayB.Parent = info
-PlayB.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-PlayB.Position = UDim2.new(0.217013896, 0, 0.79566747, 0)
-PlayB.Size = UDim2.new(0, 451, 0, 24)
-PlayB.Font = Enum.Font.SourceSans
-PlayB.Text = "Play"
-PlayB.TextColor3 = Color3.fromRGB(255, 255, 255)
-PlayB.TextScaled = true
-PlayB.TextSize = 14.000
-PlayB.TextWrapped = true
-
-UICorner_3.Parent = PlayB
-
 -- Scripts:
 
-local function YYTDS_fake_script() -- Top.Dragify 
+local function VXGFW_fake_script() -- Top.Dragify 
 	local script = Instance.new('LocalScript', Top)
 
 	local UIS = game:GetService("UserInputService")
@@ -488,8 +488,8 @@ local function YYTDS_fake_script() -- Top.Dragify
 	
 	dragify(script.Parent.Parent)
 end
-coroutine.wrap(YYTDS_fake_script)()
-local function OTLGMW_fake_script() -- Close.LocalScript 
+coroutine.wrap(VXGFW_fake_script)()
+local function LVMWK_fake_script() -- Close.LocalScript 
 	local script = Instance.new('LocalScript', Close)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -497,8 +497,8 @@ local function OTLGMW_fake_script() -- Close.LocalScript
 		script.Parent.Parent.Parent.Parent:Destroy()
 	end)
 end
-coroutine.wrap(OTLGMW_fake_script)()
-local function EANXW_fake_script() -- HomeB.LocalScript 
+coroutine.wrap(LVMWK_fake_script)()
+local function YAMOT_fake_script() -- HomeB.LocalScript 
 	local script = Instance.new('LocalScript', HomeB)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -507,8 +507,8 @@ local function EANXW_fake_script() -- HomeB.LocalScript
 		script.Parent.Parent.Parent.Settings.Visible = false
 	end)
 end
-coroutine.wrap(EANXW_fake_script)()
-local function ABLAQK_fake_script() -- GamesB.LocalScript 
+coroutine.wrap(YAMOT_fake_script)()
+local function QNMRQMQ_fake_script() -- GamesB.LocalScript 
 	local script = Instance.new('LocalScript', GamesB)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -517,8 +517,8 @@ local function ABLAQK_fake_script() -- GamesB.LocalScript
 		script.Parent.Parent.Parent.Settings.Visible = false
 	end)
 end
-coroutine.wrap(ABLAQK_fake_script)()
-local function TLFIIXJ_fake_script() -- SettingsB.LocalScript 
+coroutine.wrap(QNMRQMQ_fake_script)()
+local function ODBA_fake_script() -- SettingsB.LocalScript 
 	local script = Instance.new('LocalScript', SettingsB)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -527,8 +527,8 @@ local function TLFIIXJ_fake_script() -- SettingsB.LocalScript
 		script.Parent.Parent.Parent.Home.Visible = false
 	end)
 end
-coroutine.wrap(TLFIIXJ_fake_script)()
-local function VVAUB_fake_script() -- ProfileImage.LocalScript 
+coroutine.wrap(ODBA_fake_script)()
+local function UQPE_fake_script() -- ProfileImage.LocalScript 
 	local script = Instance.new('LocalScript', ProfileImage)
 
 	local Players = game:GetService("Players")
@@ -544,8 +544,8 @@ local function VVAUB_fake_script() -- ProfileImage.LocalScript
 	local imageLabel = script.Parent
 	imageLabel.Image = content
 end
-coroutine.wrap(VVAUB_fake_script)()
-local function CSFMGM_fake_script() -- Home.LocalScript 
+coroutine.wrap(UQPE_fake_script)()
+local function QUXKSBO_fake_script() -- Home.LocalScript 
 	local script = Instance.new('LocalScript', Home)
 
 	local lua_keywords = {"and", "break", "do", "else", "elseif", "end", "false", "for", "function", "goto", "if", "in", "local", "nil", "not", "or", "repeat", "return", "then", "true", "until", "while"}
@@ -728,16 +728,16 @@ local function CSFMGM_fake_script() -- Home.LocalScript
 	
 	
 end
-coroutine.wrap(CSFMGM_fake_script)()
-local function GRQJZB_fake_script() -- Exe.LocalScript 
+coroutine.wrap(QUXKSBO_fake_script)()
+local function YOIC_fake_script() -- Exe.LocalScript 
 	local script = Instance.new('LocalScript', Exe)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		game.Workspace.UltimateTrollingGui_Loader.Load_UTG:FireServer(script.Parent.Parent.EditorFrame.Source.Text)
 	end)
 end
-coroutine.wrap(GRQJZB_fake_script)()
-local function LHKTEO_fake_script() -- Scan.LocalScript 
+coroutine.wrap(YOIC_fake_script)()
+local function LBQLLQ_fake_script() -- Scan.LocalScript 
 	local script = Instance.new('LocalScript', Scan)
 
 	local StarterGui = game:GetService("StarterGui")
@@ -775,21 +775,16 @@ local function LHKTEO_fake_script() -- Scan.LocalScript
 	]]
 	script.Parent.MouseButton1Click:Connect(function()
 	if game.Workspace.UltimateTrollingGui_Loader then
-			local valid = isfile("Eagles_Games.lua")
 			StarterGui:SetCore("SendNotification", {
 			Title = "Game Backdoored";
 			Text = "This Game Is Backdoored, Saved In Games List"
 			})
-			if not valid then
-				writefile("Eagles_Games.lua", NewGame)
-			else
 				appendfile("Eagles_Games.lua", NewGame)
-			end
 		end
 	end)
 end
-coroutine.wrap(LHKTEO_fake_script)()
-local function EKKGYGH_fake_script() -- Hs.LocalScript 
+coroutine.wrap(LBQLLQ_fake_script)()
+local function GWRUR_fake_script() -- Hs.LocalScript 
 	local script = Instance.new('LocalScript', Hs)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -817,23 +812,23 @@ local function EKKGYGH_fake_script() -- Hs.LocalScript
 		end
 	end)
 end
-coroutine.wrap(EKKGYGH_fake_script)()
-local function TEFN_fake_script() -- Clr.LocalScript 
+coroutine.wrap(GWRUR_fake_script)()
+local function GEZJIVH_fake_script() -- Clr.LocalScript 
 	local script = Instance.new('LocalScript', Clr)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.EditorFrame.Source.Text = ""
 	end)
 end
-coroutine.wrap(TEFN_fake_script)()
-local function JIXA_fake_script() -- Re.LocalScript 
+coroutine.wrap(GEZJIVH_fake_script)()
+local function CZBVLSD_fake_script() -- Re.LocalScript 
 	local script = Instance.new('LocalScript', Re)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		game.Players.LocalPlayer.Character.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(JIXA_fake_script)()
+coroutine.wrap(CZBVLSD_fake_script)()
 
 local LoadGames = readfile("Eagles_Games.lua")
 assert(loadstring(LoadGames)())
