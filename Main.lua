@@ -746,8 +746,6 @@ local function MCPPFT_fake_script() -- Scan.LocalScript
 		Text = "Scanning Will Not Work If Game Isn't Backdoored. Please Do Not Open Tickets About This"
 	})
 	local NewGame = [[
-		-- GAME FILE DO NOT EDIT THIS SCRIPT UNLESS YOU KNOW WHAT YOU'RE DOING
-		
 		local TeleportService = game:GetService("TeleportService")
 	
 		local Place = ]]..game.PlaceId..[[
@@ -763,6 +761,7 @@ local function MCPPFT_fake_script() -- Scan.LocalScript
 		newG.info.Title.Text = "]]..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name..[["
 		
 		newG.info.Description.Text = "]]..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Description..[["
+	
 		newG.info.PlayB.MouseButton1Click:Connect(function()
 		
 		if player then
