@@ -755,7 +755,7 @@ local function LBQLLQ_fake_script() -- Scan.LocalScript
 		
 		local Player = game.Players.LocalPlayer
 		
-		local gameList = Player.PlayerGui.Eagles_SS.MainFrame.Games
+		local gameList = Player.PlayerGui.Eagles_SS.MainFrame.Games.GameList
 		
 		local newG = Player.PlayerGui.GameTemplate.gamet:Clone()
 		
